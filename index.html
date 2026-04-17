@@ -1,5 +1,4 @@
-
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,7 +10,7 @@
     <!-- HEADER -->
     <header>
         <div class="logo">
-            <img src="img_logo.jpg"
+            <img src="img_logo.jpg" alt="Logo" width="50">
             <h2>BM CONNECT</h2>
         </div>
 
@@ -21,10 +20,9 @@
             <a href="#">Students</a> |
             <a href="#">Lecturers</a> |
             <a href="#">About</a> |
-            <a href="#">Reviews</a>|
+            <a href="#">Reviews</a> |
             <a href="#">Contact</a>
         </nav>
-
     </header>
 
     <!-- HERO -->
@@ -35,15 +33,32 @@
     <!-- SEARCH BAR -->
     <section class="search-bar">
         <input type="text" placeholder="Enter location">
+
+        <!-- PRICE RANGE -->
         <select>
-            <option>Price Range</option>
+            <option disabled selected>Price Range</option>
+            <option>Under P3000</option>
+            <option>P3000 - P6000</option>
+            <option>P6000+</option>
         </select>
+
+        <!-- PROPERTY TYPE -->
         <select>
-            <option>Property type</option>
+            <option disabled selected>Property Type</option>
+            <option>Room</option>
+            <option>Studio</option>
+            <option>Flat</option>
+            <option>House</option>
         </select>
+
+        <!-- FURNISHED -->
         <select>
+            <option disabled selected>Furnished</option>
             <option>Furnished</option>
+            <option>Semi-Furnished</option>
+            <option>Unfurnished</option>
         </select>
+
         <button class="search-btn">Search</button>
     </section>
 
@@ -70,6 +85,7 @@
             <a href="#">FAQ</a> |
             <a href="#">Contact</a>
         </nav>
+
         <p>© 2026 BM Connect All rights Reserved</p>
     </footer>
 
