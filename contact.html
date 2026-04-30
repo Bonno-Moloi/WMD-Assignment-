@@ -1,1 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | BM Connect</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg sticky-top bg-white">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">BM Connect<span class="brand-tag"> | Campus & City</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarMain">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="properties.html">Properties</a></li>
+                        <li class="nav-item"><a class="nav-link" href="students.html">For Students</a></li>
+                        <li class="nav-item"><a class="nav-link" href="lecturers.html">For Lecturers</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="reviews.html">Reviews</a></li>
+                        <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
 
+    <main class="py-5">
+        <div class="container">
+            <h1 class="section-title">📞 Contact Us</h1>
+            <p class="lead mb-5">Get in touch with our team. We're here to help you find your perfect home.</p>
+
+            <div class="row g-5">
+                <!-- Contact Information -->
+                <div class="col-lg-5">
+                    <div class="card p-4 h-100">
+                        <h3 class="mb-4">Get In Touch</h3>
+                        
+                        <div class="mb-4">
+                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                            <h5 class="d-inline-block ms-3">Office Address</h5>
+                            <p class="mt-2 ms-5">15 Oxford Street, Braamfontein<br>Johannesburg, 2001<br>South Africa</p>
+                        </div>
+
+                        <div class="mb-4">
+                            <i class="fas fa-phone-alt contact-icon"></i>
+                            <h5 class="d-inline-block ms-3">Phone Numbers</h5>
+                            <p class="mt-2 ms-5">Main Office: +27 11 234 5678<br>Emergency (24/7): +27 82 123 4567</p>
+                        </div>
+
+                        <div class="mb-4">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <h5 class="d-inline-block ms-3">Email Addresses</h5>
+                            <p class="mt-2 ms-5">General: hello@bmconnect.co.za<br>Leasing: leasing@bmconnect.co.za<br>Support: support@bmconnect.co.za</p>
+                        </div>
+
+                        <div>
+                            <i class="fas fa-clock contact-icon"></i>
+                            <h5 class="d-inline-block ms-3">Business Hours</h5>
+                            <p class="mt-2 ms-5">Monday - Friday: 9:00 AM - 5:00 PM<br>Saturday: 10:00 AM - 2:00 PM<br>Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="col-lg-7">
+                    <div class="card p-4">
+                        <h3 class="mb-3">Send Us a Message</h3>
+                        <p class="text-muted mb-4">Fill out the form below, and we'll get back to you within 24 hours.</p>
+                        
+                        <form id="contactForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Full Name *</label>
+                                    <input type="text" class="form-control" id="contactName" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Email Address *</label>
+                                    <input type="email" class="form-control" id="contactEmail" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" id="contactPhone">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Subject *</label>
+                                    <select class="form-select" id="contactSubject" required>
+                                        <option value="">Select a subject</option>
+                                        <option>Property Inquiry</option>
+                                        <option>Schedule Viewing</option>
+                                        <option>General Question</option>
+                                        <option>Support Request</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Message *</label>
+                                    <textarea class="form-control" rows="5" id="contactMsg" placeholder="Tell us about your needs, budget, preferred location, and move-in date..." required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-bm-primary w-100">Send Inquiry <i class="fas fa-paper-plane ms-2"></i></button>
+                                </div>
+                                <div class="col-12">
+                                    <p class="small text-muted text-center mb-0">We respect your privacy. Your information will only be used to
