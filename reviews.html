@@ -1,1 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews | BM Connect</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg sticky-top bg-white">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">BM Connect<span class="brand-tag"> | Campus & City</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarMain">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="properties.html">Properties</a></li>
+                        <li class="nav-item"><a class="nav-link" href="students.html">For Students</a></li>
+                        <li class="nav-item"><a class="nav-link" href="lecturers.html">For Lecturers</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="reviews.html">Reviews</a></li>
+                        <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
 
+    <main class="py-5">
+        <div class="container">
+            <h1 class="section-title">⭐ What Our Community Says</h1>
+            
+            <div class="row g-4 mb-5" id="reviewsContainer">
+                <div class="col-md-4">
+                    <div class="review-card">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <p class="mt-2">"BM Connect made my first off-campus stay seamless! Affordable, safe, and the team was incredibly helpful throughout the process."</p>
+                        <h6 class="mt-3">— Thabo S., 3rd Year Student</h6>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="review-card">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        <p>"Quiet faculty housing close to campus. The maintenance team is responsive, and the neighborhood is perfect for academic work."</p>
+                        <h6>— Dr. Naledi M., Senior Lecturer</h6>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="review-card">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <p>"Professional service, transparent contracts. I've rented two properties through BM Connect and both experiences were excellent."</p>
+                        <h6>— James K., PhD Candidate</h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Review Form -->
+            <div class="card p-4 mt-4">
+                <h3 class="mb-3">Share Your Experience</h3>
+                <form id="reviewForm">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" id="reviewName" placeholder="Your full name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <select class="form-select" id="reviewRole">
+                                <option value="Student">Student</option>
+                                <option value="Lecturer">Lecturer</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <textarea class="form-control" rows="4" id="reviewText" placeholder="Write your testimonial..." required></textarea>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-bm-primary">Submit Review <i class="fas fa-paper-plane ms-2"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="pt-5 pb-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5><i class="fas fa-building"></i> BM Connect</h5>
+                    <p>Your trusted bridge between campus and city living.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="properties.html">Properties</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Connect</h5>
+                    <i class="fab fa-instagram me-3 fs-4"></i>
+                    <i class="fab fa-facebook me-3 fs-4"></i>
+                    <i class="fab fa-twitter fs-4"></i>
+                </div>
+            </div>
+            <hr class="mt-4">
+            <div class="text-center small">© 2025 BM Connect — your home between campus & city. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
