@@ -3,159 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | BM Connect</title>
+    <title>Contact Us - BM Connect</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg sticky-top bg-white">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">BM Connect<span class="brand-tag"> | Campus & City</span></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarMain">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="properties.html">Properties</a></li>
-                        <li class="nav-item"><a class="nav-link" href="students.html">For Students</a></li>
-                        <li class="nav-item"><a class="nav-link" href="lecturers.html">For Lecturers</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="reviews.html">Reviews</a></li>
-                        <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
 
-    <main class="py-5">
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top py-2">
         <div class="container">
-            <h1 class="section-title">📞 Contact Us</h1>
-            <p class="lead mb-5">Get in touch with our team. We're here to help you find your perfect home.</p>
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+                <div class="logo-icon me-2"><i class="bi bi-building-fill text-white"></i></div>
+                <span style="color: #1a365d;">BM Connect</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#bmNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="bmNavbar">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-3">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="properties.html">Properties</a></li>
+                    <li class="nav-item"><a class="nav-link" href="student.html">For Students</a></li>
+                    <li class="nav-item"><a class="nav-link" href="lecturer.html">For Lecturers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
+    <div class="page-header">
+        <div class="container"><h1>Contact Us</h1><p class="lead">Reach out for viewings or any inquiries</p></div>
+    </div>
+
+    <section class="py-5">
+        <div class="container">
             <div class="row g-5">
-                <!-- Contact Information -->
-                <div class="col-lg-5">
-                    <div class="card p-4 h-100">
-                        <h3 class="mb-4">Get In Touch</h3>
-                        
-                        <div class="mb-4">
-                            <i class="fas fa-map-marker-alt contact-icon"></i>
-                            <h5 class="d-inline-block ms-3">Office Address</h5>
-                            <p class="mt-2 ms-5">Fairgrounds Office Park, Fairgrounds<br>Gaborone, 2001<br>Botswana</p>
-                        </div>
-
-                        <div class="mb-4">
-                            <i class="fas fa-phone-alt contact-icon"></i>
-                            <h5 class="d-inline-block ms-3">Phone Numbers</h5>
-                            <p class="mt-2 ms-5">Main Office: +267 77864737<br>Emergency (24/7): +267 311624</p>
-                        </div>
-
-                        <div class="mb-4">
-                            <i class="fas fa-envelope contact-icon"></i>
-                            <h5 class="d-inline-block ms-3">Email Addresses</h5>
-                            <p class="mt-2 ms-5">General: hello@bmconnect.co.za<br>Leasing: leasing@bmconnect.co.za<br>Support: support@bmconnect.co.za</p>
-                        </div>
-
-                        <div>
-                            <i class="fas fa-clock contact-icon"></i>
-                            <h5 class="d-inline-block ms-3">Business Hours</h5>
-                            <p class="mt-2 ms-5">Monday - Friday: 9:00 AM - 5:00 PM<br>Saturday: 10:00 AM - 2:00 PM<br>Sunday: Closed</p>
-                        </div>
+                <div class="col-md-5">
+                    <div class="d-flex flex-column gap-4">
+                        <div class="d-flex gap-3"><div class="contact-icon"><i class="bi bi-geo-alt-fill"></i></div><div><h5>Visit Us</h5><p class="text-secondary">123 University Road, Campus District, Johannesburg</p></div></div>
+                        <div class="d-flex gap-3"><div class="contact-icon"><i class="bi bi-telephone-fill"></i></div><div><h5>Call Us</h5><p class="text-secondary">+27 (0) 11 123 4567</p></div></div>
+                        <div class="d-flex gap-3"><div class="contact-icon"><i class="bi bi-envelope-fill"></i></div><div><h5>Email</h5><p class="text-secondary">info@bmconnect.co.za</p><p class="text-secondary">support@bmconnect.co.za</p></div></div>
+                        <div class="map-placeholder mt-2"></div>
                     </div>
                 </div>
-
-                <!-- Contact Form -->
-                <div class="col-lg-7">
-                    <div class="card p-4">
-                        <h3 class="mb-3">Send Us a Message</h3>
-                        <p class="text-muted mb-4">Fill out the form below, and we'll get back to you within 24 hours.</p>
-                        
+                <div class="col-md-7">
+                    <div class="bg-white p-4 rounded-4 shadow-sm">
+                        <h4 class="mb-3">Send a Message</h4>
                         <form id="contactForm">
                             <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label class="form-label">Full Name *</label>
-                                    <input type="text" class="form-control" id="contactName" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label">Email Address *</label>
-                                    <input type="email" class="form-control" id="contactEmail" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label">Phone Number</label>
-                                    <input type="tel" class="form-control" id="contactPhone">
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label">Subject *</label>
-                                    <select class="form-select" id="contactSubject" required>
-                                        <option value="">Select a subject</option>
-                                        <option>Property Inquiry</option>
-                                        <option>Schedule Viewing</option>
-                                        <option>General Question</option>
-                                        <option>Support Request</option>
-                                    </select>
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label">Message *</label>
-                                    <textarea class="form-control" rows="5" id="contactMsg" placeholder="Tell us about your needs, budget, preferred location, and move-in date..." required></textarea>
-                                </div>
-                                <div class="col-12">
-                                    <button type="submit" class="btn btn-bm-primary w-100">Send Inquiry <i class="fas fa-paper-plane ms-2"></i></button>
-                                </div>
-                                <div class="col-12">
-                                    <p class="small text-muted text-center mb-0">We respect your privacy. Your information will only be used to respond to your inquiry.</p>
-                                </div>
+                                <div class="col-md-6"><input type="text" class="form-control" placeholder="First Name" required></div>
+                                <div class="col-md-6"><input type="text" class="form-control" placeholder="Last Name"></div>
+                                <div class="col-12"><input type="email" class="form-control" placeholder="Email Address" required></div>
+                                <div class="col-12"><input type="tel" class="form-control" placeholder="Phone Number"></div>
+                                <div class="col-12"><select class="form-select"><option>I am a Student</option><option>I am a Lecturer</option></select></div>
+                                <div class="col-12"><textarea rows="4" class="form-control" placeholder="Your message..."></textarea></div>
+                                <div class="col-12"><button type="submit" class="btn btn-bm w-100">Send Message <i class="bi bi-send"></i></button></div>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
-
-            <!-- Map Section -->
-            <div class="mt-5">
-                <div class="ratio ratio-21x9 rounded-4 overflow-hidden shadow">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3584.897205456396!2d28.046305!3d-26.195284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950c1abf0d441b%3A0x5f4c0a8b6c6b6f8!2sJohannesburg%20CBD!5e0!3m2!1sen!2sza!4v1610000000000!5m2!1sen!2sza" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-                <p class="text-center mt-3">
-                    <i class="fas fa-location-dot text-primary me-1"></i> 
-                    <strong>BM Connect Headquarters</strong> — Located in the heart of Braamfontein, minutes from major universities
-                </p>
-            </div>
         </div>
-    </main>
+    </section>
 
-    <footer class="pt-5 pb-4">
+    <footer class="pt-5 pb-3">
         <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h5><i class="fas fa-building"></i> BM Connect</h5>
-                    <p>Your trusted bridge between campus and city living.</p>
-                </div>
-                <div class="col-md-4">
-                    <h5>Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="properties.html">Properties</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5>Connect</h5>
-                    <i class="fab fa-instagram me-3 fs-4"></i>
-                    <i class="fab fa-facebook me-3 fs-4"></i>
-                    <i class="fab fa-twitter fs-4"></i>
-                </div>
+            <div class="row gy-4">
+                <div class="col-md-4"><h4 class="fw-bold text-white">BM Connect</h4><p class="text-white-50">Your Home Between Campus & City.</p></div>
+                <div class="col-md-2"><h5 class="text-white">Quick Links</h5><ul class="list-unstyled"><li><a href="index.html" class="footer-link">Home</a></li><li><a href="properties.html" class="footer-link">Properties</a></li></ul></div>
+                <div class="col-md-2"><h5 class="text-white">Support</h5><ul class="list-unstyled"><li><a href="faq.html" class="footer-link">FAQ</a></li><li><a href="contact.html" class="footer-link">Contact</a></li></ul></div>
+                <div class="col-md-4"><h5 class="text-white">Follow Us</h5><div class="d-flex gap-3 fs-4"><i class="bi bi-facebook text-white-50"></i><i class="bi bi-instagram text-white-50"></i></div></div>
             </div>
-            <hr class="mt-4">
-            <div class="text-center small">© 2025 BM Connect — your home between campus & city. All rights reserved.</div>
+            <hr class="mt-4 opacity-25"><div class="text-center text-white-50 small">© 2025 BM Connect.</div>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you! A BM Connect agent will respond shortly.');
+            this.reset();
+        });
+    </script>
 </body>
 </html>
