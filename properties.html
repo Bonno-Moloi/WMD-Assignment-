@@ -3,93 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Properties | BM Connect</title>
+    <title>Properties - BM Connect</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg sticky-top bg-white">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">BM Connect<span class="brand-tag"> | Campus & City</span></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarMain">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="properties.html">Properties</a></li>
-                        <li class="nav-item"><a class="nav-link" href="students.html">For Students</a></li>
-                        <li class="nav-item"><a class="nav-link" href="lecturers.html">For Lecturers</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="reviews.html">Reviews</a></li>
-                        <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
 
-    <main class="py-5">
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top py-2">
         <div class="container">
-            <h1 class="section-title">🏠 All Properties</h1>
-            
-            <!-- Filters -->
-            <div class="filter-bar d-flex flex-wrap gap-3 mb-4 justify-content-between align-items-center">
-                <div class="d-flex gap-2">
-                    <select id="propertyTypeFilter" class="form-select" onchange="filterProperties()">
-                        <option value="all">All Types</option>
-                        <option value="apartment">Apartments</option>
-                        <option value="bachelor">Bachelor Pads</option>
-                        <option value="shared">Shared Housing</option>
-                    </select>
-                    <select id="priceFilter" class="form-select" onchange="filterProperties()">
-                        <option value="all">Any Budget</option>
-                        <option value="low">Under R4500</option>
-                        <option value="mid">R4500 - R7500</option>
-                        <option value="high">R7500+</option>
-                    </select>
-                </div>
-                <div class="w-25">
-                    <input type="text" class="form-control" placeholder="Search properties..." id="searchInput">
-                </div>
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+                <div class="logo-icon me-2"><i class="bi bi-building-fill text-white"></i></div>
+                <span style="color: #1a365d;">BM Connect</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#bmNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="bmNavbar">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-3">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="properties.html">Properties</a></li>
+                    <li class="nav-item"><a class="nav-link" href="student.html">For Students</a></li>
+                    <li class="nav-item"><a class="nav-link" href="lecturer.html">For Lecturers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
             </div>
-
-            <!-- Properties Grid -->
-            <div class="row g-4" id="propertiesContainer"></div>
         </div>
-    </main>
+    </nav>
 
-    <footer class="pt-5 pb-4">
+    <div class="page-header">
+        <div class="container"><h1>Our Properties</h1><p class="lead">Find your perfect home near campus</p></div>
+    </div>
+
+    <section class="py-5">
         <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h5><i class="fas fa-building"></i> BM Connect</h5>
-                    <p>Your trusted bridge between campus and city living.</p>
-                </div>
-                <div class="col-md-4">
-                    <h5>Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="properties.html">Properties</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5>Connect</h5>
-                    <i class="fab fa-instagram me-3 fs-4"></i>
-                    <i class="fab fa-facebook me-3 fs-4"></i>
-                    <i class="fab fa-twitter fs-4"></i>
+            <div class="text-center mb-5">
+                <div class="d-flex gap-2 justify-content-center flex-wrap mt-3">
+                    <button class="btn btn-outline-bm filter-btn active" data-filter="all">All Properties</button>
+                    <button class="btn btn-outline-secondary filter-btn" data-filter="student">For Students</button>
+                    <button class="btn btn-outline-secondary filter-btn" data-filter="lecturer">For Lecturers</button>
                 </div>
             </div>
-            <hr class="mt-4">
-            <div class="text-center small">© 2025 BM Connect — your home between campus & city. All rights reserved.</div>
+            <div class="row g-4" id="propertiesContainer">
+                <div class="col-md-6 col-lg-4 property-item" data-type="student">
+                    <div class="property-card card h-100">
+                        <div class="position-relative overflow-hidden"><img src="images/property-student-1.jpg" class="property-img card-img-top" alt="Student Apartment"><span class="badge position-absolute top-0 start-0 m-3 badge-student px-3 py-2">Student Friendly</span></div>
+                        <div class="card-body"><div class="price-tag">R 3,500 <small class="text-muted fs-6">/ month</small></div><h5 class="card-title mt-2">Modern Shared Apartment</h5><p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Near University Main Campus</p><div class="d-flex gap-3 text-muted mb-3"><span><i class="bi bi-door-closed"></i> 3 Beds</span><span><i class="bi bi-droplet"></i> 2 Baths</span><span><i class="bi bi-wifi"></i> WiFi</span></div><a href="contact.html" class="btn btn-bm w-100">Inquire Now</a></div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 property-item" data-type="lecturer">
+                    <div class="property-card card h-100"><div class="position-relative overflow-hidden"><img src="images/property-lecturer-1.jpg" class="property-img card-img-top"><span class="badge position-absolute top-0 start-0 m-3 bg-primary px-3 py-2">Lecturer Preferred</span></div><div class="card-body"><div class="price-tag">R 8,500 <small class="text-muted">/ month</small></div><h5 class="card-title">Executive Family Home</h5><p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Quiet Suburban Area</p><div class="d-flex gap-3 text-muted mb-3"><span><i class="bi bi-door-closed"></i> 4 Beds</span><span><i class="bi bi-car-front"></i> Garage</span></div><a href="contact.html" class="btn btn-bm w-100">Inquire Now</a></div></div>
+                </div>
+                <div class="col-md-6 col-lg-4 property-item" data-type="student">
+                    <div class="property-card card h-100"><div class="position-relative overflow-hidden"><img src="images/property-student-2.jpg" class="property-img card-img-top"><span class="badge position-absolute top-0 start-0 m-3 badge-student px-3 py-2">Student Friendly</span></div><div class="card-body"><div class="price-tag">R 2,800 <small class="text-muted">/ month</small></div><h5 class="card-title">Cozy Bachelor Pad</h5><p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> 5 min from Campus</p><div class="d-flex gap-3 text-muted mb-3"><span><i class="bi bi-door-closed"></i> 1 Bed</span><span><i class="bi bi-egg-fried"></i> Kitchen</span></div><a href="contact.html" class="btn btn-bm w-100">Inquire Now</a></div></div>
+                </div>
+                <div class="col-md-6 col-lg-4 property-item" data-type="lecturer">
+                    <div class="property-card card h-100"><div class="position-relative overflow-hidden"><img src="images/property-lecturer-2.jpg" class="property-img card-img-top"><span class="badge position-absolute top-0 start-0 m-3 bg-primary">Lecturer Preferred</span></div><div class="card-body"><div class="price-tag">R 6,200 <small class="text-muted">/ month</small></div><h5 class="card-title">Premium City Apartment</h5><p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> City Centre</p><div class="d-flex gap-3 text-muted mb-3"><span><i class="bi bi-dumbbell"></i> Gym Access</span></div><a href="contact.html" class="btn btn-bm w-100">Inquire Now</a></div></div>
+                </div>
+                <div class="col-md-6 col-lg-4 property-item" data-type="student">
+                    <div class="property-card card h-100"><div class="position-relative overflow-hidden"><img src="images/property-student-3.jpg" class="property-img card-img-top"><span class="badge position-absolute top-0 start-0 m-3 badge-student">Student Friendly</span></div><div class="card-body"><div class="price-tag">R 2,200 <small class="text-muted">/ month</small></div><h5 class="card-title">Affordable Student Housing</h5><p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Student District</p><div class="d-flex gap-3 text-muted mb-3"><span><i class="bi bi-people"></i> Shared</span><span><i class="bi bi-book"></i> Study Room</span></div><a href="contact.html" class="btn btn-bm w-100">Inquire Now</a></div></div>
+                </div>
+                <div class="col-md-6 col-lg-4 property-item" data-type="lecturer">
+                    <div class="property-card card h-100"><div class="position-relative overflow-hidden"><img src="images/property-lecturer-3.jpg" class="property-img card-img-top"><span class="badge position-absolute top-0 start-0 m-3 bg-primary">Lecturer Preferred</span></div><div class="card-body"><div class="price-tag">R 12,000 <small class="text-muted">/ month</small></div><h5 class="card-title">Spacious Academic Villa</h5><p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Prestigious Neighborhood</p><div class="d-flex gap-3 text-muted mb-3"><span><i class="bi bi-door-closed"></i> 5 Beds</span><span><i class="bi bi-tree"></i> Garden</span></div><a href="contact.html" class="btn btn-bm w-100">Inquire Now</a></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="pt-5 pb-3">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-md-4"><h4 class="fw-bold text-white">BM Connect</h4><p class="text-white-50">Your Home Between Campus & City.</p></div>
+                <div class="col-md-2"><h5 class="text-white">Quick Links</h5><ul class="list-unstyled"><li><a href="index.html" class="footer-link">Home</a></li><li><a href="properties.html" class="footer-link">Properties</a></li></ul></div>
+                <div class="col-md-2"><h5 class="text-white">Support</h5><ul class="list-unstyled"><li><a href="faq.html" class="footer-link">FAQ</a></li><li><a href="contact.html" class="footer-link">Contact</a></li></ul></div>
+                <div class="col-md-4"><h5 class="text-white">Follow Us</h5><div class="d-flex gap-3 fs-4"><i class="bi bi-facebook text-white-50"></i><i class="bi bi-instagram text-white-50"></i></div></div>
+            </div>
+            <hr class="mt-4 opacity-25"><div class="text-center text-white-50 small">© 2025 BM Connect.</div>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
+    <script>
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const propertyItems = document.querySelectorAll('.property-item');
+        
+        function filterProperties(category) {
+            propertyItems.forEach(item => {
+                if (category === 'all') item.style.display = 'block';
+                else if (category === 'student' && item.dataset.type === 'student') item.style.display = 'block';
+                else if (category === 'lecturer' && item.dataset.type === 'lecturer') item.style.display = 'block';
+                else item.style.display = 'none';
+            });
+        }
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const filterValue = this.getAttribute('data-filter');
+                filterBtns.forEach(b => b.classList.remove('active', 'btn-outline-bm'));
+                this.classList.add('active', 'btn-outline-bm');
+                filterProperties(filterValue);
+            });
+        });
+    </script>
 </body>
 </html>
