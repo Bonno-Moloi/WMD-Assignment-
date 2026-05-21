@@ -1,522 +1,323 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BM Connect - Your Home Between Campus & City</title>
-    <!-- Bootstrap 5 CSS + Icons + Core JS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!-- Additional custom CSS3 (overrides/extensions for uniqueness) -->
-    <style>
-        /* CSS3 Custom Properties & additional styling beyond Bootstrap */
-        :root {
-            --primary-dark: #1a365d;
-            --primary-soft: #2c5282;
-            --accent-orange: #ed8936;
-            --accent-hover: #dd6b20;
-            --text-muted-custom: #4a5568;
-            --shadow-custom: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
-            --transition-smooth: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
+/* style.css */
+/* CSS3 Custom Properties & additional styling beyond Bootstrap */
+:root {
+    --primary-dark: #1a365d;
+    --primary-soft: #2c5282;
+    --accent-orange: #ed8936;
+    --accent-hover: #dd6b20;
+    --text-muted-custom: #4a5568;
+    --shadow-custom: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+    --transition-smooth: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
 
-        body {
-            font-family: 'Segoe UI', system-ui, 'Helvetica Neue', sans-serif;
-            scroll-behavior: smooth;
-            background-color: #f8fafc;
-        }
+body {
+    font-family: 'Segoe UI', system-ui, 'Helvetica Neue', sans-serif;
+    scroll-behavior: smooth;
+    background-color: #f8fafc;
+}
 
-        /* Navbar brand logo enhancement */
-        .navbar-brand .logo-icon {
-            background: var(--primary-dark);
-            width: 38px;
-            height: 38px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            margin-right: 8px;
-            transition: var(--transition-smooth);
-        }
-        .navbar-brand:hover .logo-icon {
-            transform: scale(1.05);
-            background: var(--accent-orange);
-        }
-        .nav-link {
-            font-weight: 600;
-            color: var(--primary-dark);
-            transition: var(--transition-smooth);
-            position: relative;
-        }
-        .nav-link:hover, .nav-link.active {
-            color: var(--accent-orange);
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent-orange);
-            transition: width 0.25s ease;
-        }
-        .nav-link:hover::after {
-            width: 100%;
-        }
+/* Navbar brand logo enhancement */
+.navbar-brand .logo-icon {
+    background: var(--primary-dark);
+    width: 38px;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 8px;
+    transition: var(--transition-smooth);
+}
 
-        /* Hero with Background Image CSS3 */
-        .hero-section {
-            position: relative;
-            background: linear-gradient(135deg, rgba(26,54,93,0.85), rgba(44,82,114,0.85)), url('https://placehold.co/1920x1080/2c5282/white?text=Campus+City+Background');
-            background-size: cover;
-            background-position: center 30%;
-            padding: 6rem 0;
-            margin-top: 56px;
-            color: white;
-        }
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 20% 40%, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.4) 100%);
-            pointer-events: none;
-        }
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 800;
-            text-shadow: 2px 2px 12px rgba(0,0,0,0.3);
-            animation: fadeInUp 0.7s ease-out;
-        }
-        .hero-tagline {
-            font-size: 1.5rem;
-            font-style: italic;
-            font-weight: 500;
-            animation: fadeInUp 0.7s 0.1s both;
-        }
-        .search-card {
-            background: rgba(255,255,255,0.96);
-            border-radius: 20px;
-            backdrop-filter: blur(2px);
-            box-shadow: var(--shadow-custom);
-            animation: fadeInUp 0.7s 0.2s both;
-        }
+.navbar-brand:hover .logo-icon {
+    transform: scale(1.05);
+    background: var(--accent-orange);
+}
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+.nav-link {
+    font-weight: 600;
+    color: var(--primary-dark);
+    transition: var(--transition-smooth);
+    position: relative;
+}
 
-        /* Property card customization */
-        .property-card {
-            border: none;
-            border-radius: 1.25rem;
-            overflow: hidden;
-            transition: var(--transition-smooth);
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
-        }
-        .property-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 30px -12px rgba(0,0,0,0.2);
-        }
-        .property-img {
-            height: 220px;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        .property-card:hover .property-img {
-            transform: scale(1.05);
-        }
-        .badge-student {
-            background-color: #38a169;
-        }
-        .badge-lecturer {
-            background-color: var(--primary-dark);
-        }
-        .price-tag {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: var(--primary-dark);
-        }
+.nav-link:hover, .nav-link.active {
+    color: var(--accent-orange);
+}
 
-        /* Audience sections with image grids */
-        .audience-card {
-            border-radius: 1.5rem;
-            overflow: hidden;
-            transition: all 0.3s;
-            background: white;
-        }
-        .audience-img-main {
-            height: 320px;
-            object-fit: cover;
-            width: 100%;
-        }
-        .mini-gallery img {
-            height: 100px;
-            object-fit: cover;
-            border-radius: 1rem;
-            transition: 0.2s;
-            cursor: pointer;
-        }
-        .mini-gallery img:hover {
-            transform: scale(1.02);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-        }
-        .feature-icon {
-            background: var(--accent-orange);
-            width: 28px;
-            height: 28px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            color: white;
-            font-size: 0.85rem;
-            margin-right: 12px;
-        }
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-orange);
+    transition: width 0.25s ease;
+}
 
-        /* About stats */
-        .stat-circle {
-            background: #eef2ff;
-            border-radius: 1rem;
-            padding: 1.2rem;
-            text-align: center;
-        }
-        .stat-number {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: var(--primary-dark);
-        }
+.nav-link:hover::after {
+    width: 100%;
+}
 
-        /* Review cards */
-        .review-card-custom {
-            background: white;
-            border-radius: 1.2rem;
-            padding: 1.8rem;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-            transition: 0.2s;
-            height: 100%;
-        }
-        .review-card-custom:hover {
-            transform: translateY(-5px);
-        }
-        .star-rating {
-            color: #fbbf24;
-            letter-spacing: 2px;
-        }
+/* Hero with Background Image CSS3 */
+.hero-section {
+    position: relative;
+    background: linear-gradient(135deg, rgba(26,54,93,0.85), rgba(44,82,114,0.85)), url('images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center 30%;
+    padding: 6rem 0;
+    margin-top: 56px;
+    color: white;
+}
 
-        /* FAQ Accordion custom */
-        .faq-accordion .accordion-button:not(.collapsed) {
-            background-color: var(--primary-dark);
-            color: white;
-        }
-        .faq-accordion .accordion-button:focus {
-            box-shadow: none;
-            border-color: var(--accent-orange);
-        }
+.hero-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 40%, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.4) 100%);
+    pointer-events: none;
+}
 
-        /* Contact & Map */
-        .contact-icon {
-            width: 48px;
-            height: 48px;
-            background: var(--primary-dark);
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.3rem;
-        }
-        .map-placeholder {
-            background: #e2e8f0;
-            border-radius: 1rem;
-            height: 200px;
-            background-image: url('https://placehold.co/800x300/2c5282/white?text=BM+Connect+Location+Near+Campus');
-            background-size: cover;
-            background-position: center;
-        }
-        footer {
-            background: var(--primary-dark);
-            color: #e2e8f0;
-        }
-        .footer-link {
-            color: #cbd5e0;
-            text-decoration: none;
-            transition: 0.2s;
-        }
-        .footer-link:hover {
-            color: var(--accent-orange);
-            padding-left: 5px;
-        }
-        .btn-bm {
-            background: var(--accent-orange);
-            border: none;
-            padding: 0.6rem 1.8rem;
-            font-weight: 600;
-            transition: 0.2s;
-        }
-        .btn-bm:hover {
-            background: var(--accent-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(237,137,54,0.3);
-        }
-        .btn-outline-bm {
-            border: 2px solid var(--accent-orange);
-            color: var(--accent-orange);
-            background: transparent;
-        }
-        .btn-outline-bm:hover {
-            background: var(--accent-orange);
-            color: white;
-        }
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    text-shadow: 2px 2px 12px rgba(0,0,0,0.3);
+    animation: fadeInUp 0.7s ease-out;
+}
 
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.2rem;
-            }
-            .hero-tagline {
-                font-size: 1.2rem;
-            }
-        }
-    </style>
-</head>
-<body>
+.hero-tagline {
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 500;
+    animation: fadeInUp 0.7s 0.1s both;
+}
 
-    <!-- Navigation Bar (Bootstrap 5 with responsive toggler) -->
-    <nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top py-2">
-        <div class="container">
-            <a class="navbar-brand fw-bold d-flex align-items-center" href="#home">
-                <div class="logo-icon me-2">
-                    <i class="bi bi-building-fill text-white"></i>
-                </div>
-                <span class="text-primary-dark" style="color: #1a365d;">BM Connect</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#bmNavbar" aria-controls="bmNavbar" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="bmNavbar">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-3">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#properties">Properties</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#students">For Students</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#lecturers">For Lecturers</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+.search-card {
+    background: rgba(255,255,255,0.96);
+    border-radius: 20px;
+    backdrop-filter: blur(2px);
+    box-shadow: var(--shadow-custom);
+    animation: fadeInUp 0.7s 0.2s both;
+}
 
-    <!-- Hero Section with Background Image & BM Connect Logo presence -->
-    <section id="home" class="hero-section">
-        <div class="container py-5">
-            <div class="row justify-content-center text-center">
-                <div class="col-lg-8">
-                    <h1 class="hero-title">BM Connect</h1>
-                    <p class="hero-tagline">“Your Home Between Campus & City”</p>
-                    <p class="lead mb-4 opacity-90">Founded by Bonno Moloi, we bridge the gap for off-campus students and lecturers seeking premium, high-quality housing.</p>
-                    <div class="search-card p-4 mt-3">
-                        <div class="row g-3">
-                            <div class="col-md-4"><input type="text" class="form-control" placeholder="Search by location..."></div>
-                            <div class="col-md-3"><select class="form-select"><option>Property Type</option><option>Apartment</option><option>Shared</option></select></div>
-                            <div class="col-md-3"><select class="form-select"><option>Price Range</option><option>R2,000 - 4,000</option><option>R4,000 - 7,000</option></select></div>
-                            <div class="col-md-2"><button class="btn btn-bm w-100"><i class="bi bi-search"></i> Search</button></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-    <!-- Featured Properties Section -->
-    <section id="properties" class="py-5">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold" style="color: var(--primary-dark);">Featured Properties</h2>
-                <p class="text-secondary">Handpicked accommodations for students & lecturers</p>
-                <div class="d-flex gap-2 justify-content-center flex-wrap mt-3">
-                    <button class="btn btn-outline-bm filter-btn active" data-filter="all">All Properties</button>
-                    <button class="btn btn-outline-secondary filter-btn" data-filter="student">For Students</button>
-                    <button class="btn btn-outline-secondary filter-btn" data-filter="lecturer">For Lecturers</button>
-                </div>
-            </div>
-            <div class="row g-4" id="propertiesContainer">
-                <!-- Property Cards (dynamic filtering via JS later) -->
-                <div class="col-md-6 col-lg-4 property-item" data-type="student">
-                    <div class="property-card card h-100">
-                        <div class="position-relative overflow-hidden"><img src="https://placehold.co/600x400/2c5282/white?text=Modern+Student+Apartment" class="property-img card-img-top" alt="Student Apartment"><span class="badge position-absolute top-0 start-0 m-3 badge-student px-3 py-2">Student Friendly</span></div>
-                        <div class="card-body"><div class="price-tag">R 3,500 <small class="text-muted fs-6">/ month</small></div><h5 class="card-title mt-2">Modern Shared Apartment</h5><p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Near University Main Campus</p><div class="d-flex gap-3 text-muted mb-3"><span><i class="bi bi-door-closed"></i> 3 Beds</span><span><i class="bi bi-droplet"></i> 2 Baths</span><span><i class="bi bi-wifi"></i> WiFi</span></div><a href="#contact" class="btn btn-bm w-100">View Details</a></div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 property-item" data-type="lecturer">
-                    <div class="property-card card h-100"><div class="position-relative overflow-hidden"><img src="https://placehold.co/600x400/1a365d/white?text=Executive+Family+Home" class="property-img card-img-top"><span class="badge position-absolute top-0 start-0 m-3 bg-primary px-3 py-2">Lecturer Preferred</span></div><div class="card-body"><div class="price-tag">R 8,500 <small class="text-muted">/ month</small></div><h5 class="card-title">Executive Family Home</h5><p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Quiet Suburban Area</p><div class="d-flex gap-3 text-muted mb-3"><span><i class="bi bi-door-closed"></i> 4 Beds</span><span><i class="bi bi-car-front"></i> Garage</span></div><a href="#contact" class="btn btn-bm w-100">View Details</a></div></div>
-                </div>
-                <div class="col-md-6 col-lg-4 property-item" data-type="student">
-                    <div class="property-card card h-100"><div class="position-relative overflow-hidden"><img src="https://placehold.co/600x400/ed8936/white?text=Cozy+Bachelor+Pad" class="property-img card-img-top"><span class="badge position-absolute top-0 start-0 m-3 badge-student px-3 py-2">Student Friendly</span></div><div class="card-body"><div class="price-tag">R 2,800 <small class="text-muted">/ month</small></div><h5 class="card-title">Cozy Bachelor Pad</h5><p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> 5 min from Campus</p><div class="d-flex gap-3 text-muted mb-3"><span><i class="bi bi-door-closed"></i> 1 Bed</span><span><i class="bi bi-egg-fried"></i> Kitchen</span></div><a href="#contact" class="btn btn-bm w-100">View Details</a></div></div>
-                </div>
-                <div class="col-md-6 col-lg-4 property-item" data-type="lecturer">
-                    <div class="property-card card h-100"><div class="position-relative overflow-hidden"><img src="https://placehold.co/600x400/4299e1/white?text=Premium+City+Apartment" class="property-img card-img-top"><span class="badge position-absolute top-0 start-0 m-3 bg-primary">Lecturer Preferred</span></div><div class="card-body"><div class="price-tag">R 6,200 <small class="text-muted">/ month</small></div><h5 class="card-title">Premium City Apartment</h5><p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> City Centre</p><div class="d-flex gap-3 text-muted mb-3"><span><i class="bi bi-dumbbell"></i> Gym Access</span></div><a href="#contact" class="btn btn-bm w-100">View Details</a></div></div>
-                </div>
-            </div>
-            <div class="text-center mt-5"><a href="#contact" class="btn btn-bm btn-lg">View All Properties →</a></div>
-        </div>
-    </section>
+/* Property card customization */
+.property-card {
+    border: none;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+}
 
-    <!-- For Students Section with property images + gallery -->
-    <section id="students" class="py-5 bg-light">
-        <div class="container">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6">
-                    <h2 class="fw-bold" style="color: var(--primary-dark);">For Students</h2>
-                    <p class="lead">Affordable, comfortable housing tailored for student life</p>
-                    <p>From shared apartments to budget-friendly studios, BM Connect ensures you stay close to campus without breaking the bank.</p>
-                    <ul class="list-unstyled mt-4">
-                        <li class="mb-2"><span class="feature-icon"><i class="bi bi-check-lg small"></i></span> Shared housing from R 2,000/month</li>
-                        <li class="mb-2"><span class="feature-icon"><i class="bi bi-check-lg"></i></span> Walking distance to campus</li>
-                        <li class="mb-2"><span class="feature-icon"><i class="bi bi-check-lg"></i></span> High-speed internet & study areas</li>
-                        <li class="mb-2"><span class="feature-icon"><i class="bi bi-check-lg"></i></span> 24/7 security & support</li>
-                    </ul>
-                    <a href="#properties" class="btn btn-bm mt-2">Browse Student Housing</a>
-                    <!-- mini gallery property images specific to students -->
-                    <div class="row g-2 mt-4 mini-gallery">
-                        <div class="col-6"><img src="https://placehold.co/400x300/38a169/white?text=Student+Residence+Hall" class="img-fluid rounded-4 shadow-sm" alt="Student property"></div>
-                        <div class="col-6"><img src="https://placehold.co/400x300/ed8936/white?text=Budget+Friendly+Room" class="img-fluid rounded-4 shadow-sm" alt="Budget room"></div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <img src="https://placehold.co/800x500/2b6cb0/white?text=Happy+Students+in+Modern+Housing" class="img-fluid rounded-4 shadow-lg" alt="Student housing community">
-                </div>
-            </div>
-        </div>
-    </section>
+.property-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 30px -12px rgba(0,0,0,0.2);
+}
 
-    <!-- For Lecturers Section with property images -->
-    <section id="lecturers" class="py-5">
-        <div class="container">
-            <div class="row align-items-center g-5 flex-row-reverse">
-                <div class="col-lg-6">
-                    <h2 class="fw-bold" style="color: var(--primary-dark);">For Lecturers</h2>
-                    <p class="lead">Premium, peaceful homes designed for academic excellence</p>
-                    <p>Quiet neighborhoods, family-friendly houses, and executive apartments just minutes from campus. We understand your need for comfort and serenity.</p>
-                    <ul class="list-unstyled mt-4">
-                        <li class="mb-2"><span class="feature-icon"><i class="bi bi-check-lg"></i></span> Family homes & luxury apartments</li>
-                        <li class="mb-2"><span class="feature-icon"><i class="bi bi-check-lg"></i></span> Long-term lease options</li>
-                        <li class="mb-2"><span class="feature-icon"><i class="bi bi-check-lg"></i></span> Premium finishes & gardens</li>
-                        <li class="mb-2"><span class="feature-icon"><i class="bi bi-check-lg"></i></span> Dedicated property management</li>
-                    </ul>
-                    <a href="#properties" class="btn btn-bm mt-2">Browse Lecturer Housing</a>
-                    <!-- Lecturer specific property images -->
-                    <div class="row g-2 mt-4 mini-gallery">
-                        <div class="col-6"><img src="https://placehold.co/400x300/1a365d/white?text=Executive+Villa" class="img-fluid rounded-4 shadow-sm" alt="Lecturer Villa"></div>
-                        <div class="col-6"><img src="https://placehold.co/400x300/2c5282/white?text=Quiet+Academic+Cottage" class="img-fluid rounded-4 shadow-sm" alt="Lecturer cottage"></div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <img src="https://placehold.co/800x500/4a5568/white?text=Professional+Luxury+Home+For+Faculty" class="img-fluid rounded-4 shadow-lg" alt="Lecturer home">
-                </div>
-            </div>
-        </div>
-    </section>
+.property-img {
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
 
-    <!-- About Section (Bonno Moloi) -->
-    <section id="about" class="py-5 bg-white">
-        <div class="container">
-            <div class="text-center mb-5"><h2 class="fw-bold" style="color: var(--primary-dark);">About BM Connect</h2><p class="text-secondary">Your trusted partner in property solutions</p></div>
-            <div class="row g-5 align-items-start">
-                <div class="col-md-5 text-center"><div class="bg-light p-4 rounded-4 shadow-sm"><img src="https://placehold.co/300x300/ed8936/white?text=Bonno+Moloi" class="rounded-circle img-fluid mb-3" style="width: 180px; height:180px; object-fit:cover;"><h3>Bonno Moloi</h3><p class="text-accent fw-bold">Founder & CEO</p><p>Established BM Connect to close the housing gap for academic communities.</p></div></div>
-                <div class="col-md-7"><h3 class="fw-semibold">Our Mission & Vision</h3><p>BM Connect was founded to bridge the gap between off-campus students and lecturers requiring high-quality housing. We prioritize transparency, community, and exceptional service.</p><div class="row mt-4"><div class="col-6"><div class="stat-circle"><span class="stat-number">500+</span><br>Properties Listed</div></div><div class="col-6"><div class="stat-circle"><span class="stat-number">2,000+</span><br>Happy Tenants</div></div></div><div class="mt-3"><i class="bi bi-check-circle-fill text-accent"></i> Verified listings & no hidden fees</div></div>
-            </div>
-        </div>
-    </section>
+.property-card:hover .property-img {
+    transform: scale(1.05);
+}
 
-    <!-- Reviews Section -->
-    <section id="reviews" class="py-5" style="background: linear-gradient(120deg, #1a365d, #2c5282); color: white;">
-        <div class="container">
-            <div class="text-center mb-5"><h2 class="fw-bold text-white">What Our Clients Say</h2><p class="text-white-50">Real experiences from students and lecturers</p></div>
-            <div class="row g-4">
-                <div class="col-md-4"><div class="review-card-custom"><div class="star-rating mb-2">★★★★★</div><p>"BM Connect helped me find a safe, affordable apartment steps from campus. Great support!"</p><div class="d-flex align-items-center mt-3"><img src="https://placehold.co/50x50/ed8936/white?text=TM" class="rounded-circle me-3" width="50"><div><strong>Thabo M.</strong><br><small>3rd Year Student</small></div></div></div></div>
-                <div class="col-md-4"><div class="review-card-custom"><div class="star-rating mb-2">★★★★★</div><p>"As a lecturer, I needed peace and quiet. BM Connect found my family a perfect home in a lovely neighborhood."</p><div class="d-flex align-items-center mt-3"><img src="https://placehold.co/50x50/ed8936/white?text=SK" class="rounded-circle me-3" width="50"><div><strong>Dr. Sarah K.</strong><br><small>Senior Lecturer</small></div></div></div></div>
-                <div class="col-md-4"><div class="review-card-custom"><div class="star-rating mb-2">★★★★★</div><p>"Transparent pricing, real images, and fast response. Highly recommend BM Connect!"</p><div class="d-flex align-items-center mt-3"><img src="https://placehold.co/50x50/ed8936/white?text=LD" class="rounded-circle me-3" width="50"><div><strong>Lerato D.</strong><br><small>Postgraduate</small></div></div></div></div>
-            </div>
-        </div>
-    </section>
+.badge-student {
+    background-color: #38a169;
+}
 
-    <!-- FAQ Accordion (Bootstrap 5 JS powered) -->
-    <section id="faq" class="py-5 bg-light">
-        <div class="container">
-            <div class="text-center mb-4"><h2 class="fw-bold" style="color: var(--primary-dark);">Frequently Asked Questions</h2><p>Everything you need to know</p></div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8"><div class="accordion faq-accordion" id="faqAccordion">
-                    <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">How do I apply for a property?</button></h2><div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion"><div class="accordion-body">Simply browse listings and click "View Details". Our team will contact you within 24 hours to schedule a viewing and assist with the application.</div></div></div>
-                    <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">What is the payment procedure?</button></h2><div id="faq2" class="accordion-collapse collapse"><div class="accordion-body">A deposit (usually one month's rent) and first month's rent required before move-in. Payments via bank transfer or secure online.</div></div></div>
-                    <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">Are utilities included?</button></h2><div id="faq3" class="accordion-collapse collapse"><div class="accordion-body">It varies by property; each listing indicates what is included. Most student housing includes WiFi and water.</div></div></div>
-                </div></div>
-            </div>
-        </div>
-    </section>
+.badge-lecturer {
+    background-color: var(--primary-dark);
+}
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-5">
-        <div class="container">
-            <div class="text-center mb-5"><h2 class="fw-bold" style="color: var(--primary-dark);">Contact Us</h2><p>Reach out for viewings or any inquiries</p></div>
-            <div class="row g-5">
-                <div class="col-md-5"><div class="d-flex flex-column gap-4"><div class="d-flex gap-3"><div class="contact-icon"><i class="bi bi-geo-alt-fill"></i></div><div><h5>Visit Us</h5><p class="text-secondary">123 University Road, Campus District, Johannesburg</p></div></div><div class="d-flex gap-3"><div class="contact-icon"><i class="bi bi-telephone-fill"></i></div><div><h5>Call Us</h5><p class="text-secondary">+27 (0) 11 123 4567</p></div></div><div class="d-flex gap-3"><div class="contact-icon"><i class="bi bi-envelope-fill"></i></div><div><h5>Email</h5><p class="text-secondary">info@bmconnect.co.za</p></div></div><div class="map-placeholder mt-2"></div></div></div>
-                <div class="col-md-7"><div class="bg-white p-4 rounded-4 shadow-sm"><h4 class="mb-3">Send a Message</h4><form id="contactForm"><div class="row g-3"><div class="col-md-6"><input type="text" class="form-control" placeholder="First Name" required></div><div class="col-md-6"><input type="text" class="form-control" placeholder="Last Name"></div><div class="col-12"><input type="email" class="form-control" placeholder="Email Address" required></div><div class="col-12"><select class="form-select"><option>I am a Student</option><option>I am a Lecturer</option></select></div><div class="col-12"><textarea rows="4" class="form-control" placeholder="Your message..."></textarea></div><div class="col-12"><button type="submit" class="btn btn-bm w-100">Send Message <i class="bi bi-send"></i></button></div></div></form></div></div>
-            </div>
-        </div>
-    </section>
+.price-tag {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--primary-dark);
+}
 
-    <!-- Footer -->
-    <footer class="pt-5 pb-3">
-        <div class="container"><div class="row gy-4"><div class="col-md-4"><h4 class="fw-bold text-white">BM Connect</h4><p class="text-white-50">Your Home Between Campus & City — founded by Bonno Moloi to provide quality housing solutions for academic staff and students.</p></div><div class="col-md-2"><h5 class="text-white">Quick Links</h5><ul class="list-unstyled"><li><a href="#home" class="footer-link">Home</a></li><li><a href="#properties" class="footer-link">Properties</a></li><li><a href="#students" class="footer-link">Students</a></li></ul></div><div class="col-md-2"><h5 class="text-white">Support</h5><ul class="list-unstyled"><li><a href="#faq" class="footer-link">FAQ</a></li><li><a href="#contact" class="footer-link">Contact</a></li></ul></div><div class="col-md-4"><h5 class="text-white">Follow Us</h5><div class="d-flex gap-3 fs-4"><i class="bi bi-facebook text-white-50"></i><i class="bi bi-instagram text-white-50"></i><i class="bi bi-twitter-x text-white-50"></i></div></div></div><hr class="mt-4 opacity-25"><div class="text-center text-white-50 small">© 2025 BM Connect. All rights reserved. Bridging students & lecturers to their perfect home.</div></div>
-    </footer>
+/* Audience sections with image grids */
+.audience-card {
+    border-radius: 1.5rem;
+    overflow: hidden;
+    transition: all 0.3s;
+    background: white;
+}
 
-    <!-- Bootstrap JS Bundle + custom filter JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // JavaScript for filtering properties by student/lecturer
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const propertyItems = document.querySelectorAll('.property-item');
-        
-        function filterProperties(category) {
-            propertyItems.forEach(item => {
-                if (category === 'all') {
-                    item.style.display = 'block';
-                } else if (category === 'student' && item.dataset.type === 'student') {
-                    item.style.display = 'block';
-                } else if (category === 'lecturer' && item.dataset.type === 'lecturer') {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        }
+.audience-img-main {
+    height: 320px;
+    object-fit: cover;
+    width: 100%;
+}
 
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                const filterValue = this.getAttribute('data-filter');
-                filterBtns.forEach(b => b.classList.remove('active', 'btn-outline-bm'));
-                this.classList.add('active', 'btn-outline-bm');
-                filterProperties(filterValue);
-            });
-        });
-        // initial active all
-        document.querySelector('.filter-btn[data-filter="all"]').classList.add('active', 'btn-outline-bm');
-        
-        // simple contact form alert (demo)
-        document.getElementById('contactForm')?.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you! A BM Connect agent will respond shortly.');
-            this.reset();
-        });
-    </script>
-</body>
-</html>
+.mini-gallery img {
+    height: 100px;
+    object-fit: cover;
+    border-radius: 1rem;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.mini-gallery img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.feature-icon {
+    background: var(--accent-orange);
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    font-size: 0.85rem;
+    margin-right: 12px;
+}
+
+/* About stats */
+.stat-circle {
+    background: #eef2ff;
+    border-radius: 1rem;
+    padding: 1.2rem;
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--primary-dark);
+}
+
+/* Review cards */
+.review-card-custom {
+    background: white;
+    border-radius: 1.2rem;
+    padding: 1.8rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    transition: 0.2s;
+    height: 100%;
+}
+
+.review-card-custom:hover {
+    transform: translateY(-5px);
+}
+
+.star-rating {
+    color: #fbbf24;
+    letter-spacing: 2px;
+}
+
+/* FAQ Accordion custom */
+.faq-accordion .accordion-button:not(.collapsed) {
+    background-color: var(--primary-dark);
+    color: white;
+}
+
+.faq-accordion .accordion-button:focus {
+    box-shadow: none;
+    border-color: var(--accent-orange);
+}
+
+/* Contact & Map */
+.contact-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--primary-dark);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.3rem;
+}
+
+.map-placeholder {
+    background: #e2e8f0;
+    border-radius: 1rem;
+    height: 200px;
+    background-image: url('images/map-location.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+footer {
+    background: var(--primary-dark);
+    color: #e2e8f0;
+}
+
+.footer-link {
+    color: #cbd5e0;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.footer-link:hover {
+    color: var(--accent-orange);
+    padding-left: 5px;
+}
+
+.btn-bm {
+    background: var(--accent-orange);
+    border: none;
+    padding: 0.6rem 1.8rem;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.btn-bm:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(237,137,54,0.3);
+}
+
+.btn-outline-bm {
+    border: 2px solid var(--accent-orange);
+    color: var(--accent-orange);
+    background: transparent;
+}
+
+.btn-outline-bm:hover {
+    background: var(--accent-orange);
+    color: white;
+}
+
+.page-header {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-soft));
+    color: white;
+    padding: 100px 0 60px;
+    margin-top: 56px;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    .hero-tagline {
+        font-size: 1.2rem;
+    }
+    .page-header h1 {
+        font-size: 2rem;
+    }
+}
