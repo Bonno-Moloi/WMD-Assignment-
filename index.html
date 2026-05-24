@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+ 
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top py-2">
         <div class="container">
@@ -38,28 +38,28 @@
             </div>
         </div>
     </nav>
-
+ 
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="container py-5">
             <div class="row justify-content-center text-center">
                 <div class="col-lg-8">
                     <h1 class="hero-title">BM Connect</h1>
-                    <p class="hero-tagline">“Your Home Between Campus & City”</p>
+                    <p class="hero-tagline">"Your Home Between Campus & City"</p>
                     <p class="lead mb-4 opacity-90">Founded by Bonno Moloi, we bridge the gap for off-campus students and lecturers seeking premium, high-quality housing.</p>
                     <div class="search-card p-4 mt-3">
                         <div class="row g-3">
-                            <div class="col-md-4"><input type="text" class="form-control" placeholder="Search by location..."></div>
-                            <div class="col-md-3"><select class="form-select"><option>Property Type</option><option>Apartment</option><option>Shared</option></select></div>
-                            <div class="col-md-3"><select class="form-select"><option>Price Range</option><option>P2,000 - 3,000</option><option>P4,000 - 7,000</option></select></div>
-                            <div class="col-md-2"><button class="btn btn-bm w-100"><i class="bi bi-search"></i> Search</button></div>
+                            <div class="col-md-4"><input type="text" id="searchLocation" class="form-control" placeholder="Search by location..."></div>
+                            <div class="col-md-3"><select id="searchType" class="form-select"><option value="">Property Type</option><option value="apartment">Apartment</option><option value="shared">Shared</option></select></div>
+                            <div class="col-md-3"><select id="searchPrice" class="form-select"><option value="">Price Range</option><option value="2000-3000">P2,000 - 3,000</option><option value="4000-7000">P4,000 - 7,000</option></select></div>
+                            <div class="col-md-2"><button class="btn btn-bm w-100" onclick="handleSearch()"><i class="bi bi-search"></i> Search</button></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
+ 
     <!-- Featured Properties Preview -->
     <section class="py-5">
         <div class="container">
@@ -96,8 +96,8 @@
             </div>
         </div>
     </section>
-
-    <!-- Reviews Section Preview - enriched with additional client reviews and authentic details -->
+ 
+    <!-- Reviews Section Preview -->
     <section id="reviews" class="py-5" style="background: linear-gradient(120deg, #1a365d, #2c5282); color: white;">
         <div class="container">
             <div class="text-center mb-5">
@@ -105,7 +105,6 @@
                 <p class="text-white-50">Real experiences from students and lecturers — trusted by hundreds across Botswana</p>
             </div>
             <div class="row g-4">
-                <!-- existing first review (enhanced with star rating) -->
                 <div class="col-md-4">
                     <div class="review-card-custom p-4 rounded-4 bg-white bg-opacity-10 h-100">
                         <div class="star-rating mb-3">
@@ -122,7 +121,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- existing second review (enhanced with star rating) -->
                 <div class="col-md-4">
                     <div class="review-card-custom p-4 rounded-4 bg-white bg-opacity-10 h-100">
                         <div class="star-rating mb-3">
@@ -139,7 +137,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- existing third review (enhanced with star rating) -->
                 <div class="col-md-4">
                     <div class="review-card-custom p-4 rounded-4 bg-white bg-opacity-10 h-100">
                         <div class="star-rating mb-3">
@@ -156,7 +153,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- additional review 4: more student experience -->
                 <div class="col-md-4">
                     <div class="review-card-custom p-4 rounded-4 bg-white bg-opacity-10 h-100">
                         <div class="star-rating mb-3">
@@ -173,7 +169,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- additional review 5: lecturer/family perspective -->
                 <div class="col-md-4">
                     <div class="review-card-custom p-4 rounded-4 bg-white bg-opacity-10 h-100">
                         <div class="star-rating mb-3">
@@ -190,7 +185,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- additional review 6: student satisfaction story -->
                 <div class="col-md-4">
                     <div class="review-card-custom p-4 rounded-4 bg-white bg-opacity-10 h-100">
                         <div class="star-rating mb-3">
@@ -207,7 +201,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- extra seventh review for more variety (international student) -->
                 <div class="col-md-4">
                     <div class="review-card-custom p-4 rounded-4 bg-white bg-opacity-10 h-100">
                         <div class="star-rating mb-3">
@@ -224,7 +217,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- review 8: Lecturer reliability -->
                 <div class="col-md-4">
                     <div class="review-card-custom p-4 rounded-4 bg-white bg-opacity-10 h-100">
                         <div class="star-rating mb-3">
@@ -242,7 +234,6 @@
                     </div>
                 </div>
             </div>
-            <!-- extra trust element: average rating snippet (just visual, no code change apart from reviews) -->
             <div class="text-center mt-5">
                 <div class="d-flex flex-wrap justify-content-center align-items-center gap-3">
                     <div class="bg-white bg-opacity-25 rounded-pill px-4 py-2"><i class="bi bi-chat-quote-fill me-2"></i> 150+ verified tenants</div>
@@ -252,7 +243,7 @@
             </div>
         </div>
     </section>
-
+ 
     <!-- Footer -->
     <footer class="pt-5 pb-3">
         <div class="container">
@@ -265,5 +256,27 @@
             <hr class="mt-4 opacity-25"><div class="text-center text-white-50 small">© 2025 BM Connect. All rights reserved.</div>
         </div>
     </footer>
-
+ 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function handleSearch() {
+            var location = document.getElementById('searchLocation').value.trim();
+            var type     = document.getElementById('searchType').value;
+            var price    = document.getElementById('searchPrice').value;
+ 
+            if (!location && !type && !price) {
+                alert('Please enter a location, property type, or price range.');
+                return;
+            }
+ 
+            var params = new URLSearchParams();
+            if (location) params.set('location', location);
+            if (type)     params.set('type', type);
+            if (price)    params.set('price', price);
+ 
+            window.location.href = 'properties.html?' + params.toString();
+        }
+    </script>
+ 
+</body>
+</html>
