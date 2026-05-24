@@ -16,55 +16,18 @@ body {
     background-color: #f8fafc;
 }
 
-/* Navbar brand logo */
-.navbar-brand .logo-icon {
-    width: 42px;
+/* Navbar logo image */
+.navbar-logo {
     height: 42px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    width: 42px;
+    object-fit: contain;
     border-radius: 50%;
-    overflow: hidden;
-    margin-right: 8px;
     transition: var(--transition-smooth);
-    background: url('images/logo.png') center/cover no-repeat, var(--primary-dark);
-    font-size: 0;
 }
 
-.navbar-brand .logo-icon i {
-    opacity: 0;
-    width: 0;
-}
-
-.navbar-brand:hover .logo-icon {
+.navbar-logo:hover {
     transform: scale(1.08);
     box-shadow: 0 0 0 3px rgba(237, 137, 54, 0.45);
-}
-
-.nav-link {
-    font-weight: 600;
-    color: var(--primary-dark);
-    transition: var(--transition-smooth);
-    position: relative;
-}
-
-.nav-link:hover, .nav-link.active {
-    color: var(--accent-orange);
-}
-
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--accent-orange);
-    transition: width 0.25s ease;
-}
-
-.nav-link:hover::after {
-    width: 100%;
 }
 
 /* Hero with Background Image CSS3 */
